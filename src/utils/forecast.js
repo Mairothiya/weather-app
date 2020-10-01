@@ -5,11 +5,11 @@ const forecast = (latitude,longitude,callback) => {
 
     request({url, json: true}, (error, { body }) => {
         if(error){
-            console.log('Unable to connect Service!',undefined)
+            callback('Unable to connect Service!',undefined)
         }else if(body.error){
-            console.log('Unable to find location!! try again with thw new search',undefined)
+            callback('Unable to find location!! Try again with the new search',undefined)
         }else {
-            console.log(undefined,'it is currently'+ body.current.weather_descriptions[0] + '. it feels like ' + body.current.feelslike)
+            callback(undefined,'It is currently'+ body.current.weather_descriptions[0] + '. It feels like ' + body.current.feelslike)
         }
     })
 }
