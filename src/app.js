@@ -34,7 +34,7 @@ app.get('',(req,res) =>{
 
 app.get('/about',(req,res) =>{
     res.render('about',{
-        tittle: 'About me',
+        title: 'About me',
         name: 'Piyush Gupta'
     })
 })
@@ -50,7 +50,7 @@ app.get('/help',(req,res) =>{
 app.get('/help/*', (req,res) =>{
     res.render('404',{
         title: "404",
-        nanme: "Piyush Gupta",
+        name: "Piyush Gupta",
         errormessage: "404 page not found"
     })
 })
@@ -80,12 +80,6 @@ app.get('/weather',(req,res) =>{
 
         })
     })
-
-    // res.send({
-    //     forecast: 'sunny',
-    //     location: 'Agra',
-    //     aaddress: req.query.address
-    // })
 })
  
 app.get('/products', (req,res) => {
@@ -104,7 +98,7 @@ app.get('/products', (req,res) => {
 app.get('*', (req,res) =>{
     res.render('404',{
         title: "404",
-        nanme: "Piyush Gupta",
+        name: "Piyush Gupta",
         errorMessage: "404 page not found"
     })
 })
